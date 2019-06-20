@@ -22,7 +22,7 @@ def LadeListe(Pfad):
 
 def HAUPTSACHE(ausgewaehlt):
     print("Der Hangman-inator hat ein Wort ausgewählt und ist bereit, dich auf die Probe zu stellen!")
-    for x in range(0,len(ausgewaehlt)): #Die Anzahl der Buchstaben wird mit "_" dargestellt
+    for striche in range(0,len(ausgewaehlt)): #Die Anzahl der Buchstaben wird mit "_" dargestellt
         print("_ ", end="")
     print("") #Naechste print()-Befehle haben Zeilenumbruch danach
 
@@ -41,6 +41,7 @@ def HAUPTSACHE(ausgewaehlt):
             print("Herzlichen Glückwunsch, du hast das richtige Wort erraten!")
             break #der break-Befehl, weil das Ergebnis bereits vorhanden ist.
     print("Leider kein Versuch mehr!")
+    print("Das Wort war: ", ausgewaehlt)
+    input("Druecke ENTER um zu beenden.")
 
 HAUPTSACHE(LadeListe(Pfad))
-input("Druecke ENTER um zu beenden.")
