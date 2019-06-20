@@ -12,6 +12,7 @@
 import random
 
 Pfad = 'wordlist.txt'
+difficulty = 1.5 #Schwierigkeit, je kleiner umso schwerer & je groeßer umso leichter
 
 def LadeListe(Pfad):
     liste = open(Pfad,'r').read().splitlines() #Wortliste laden, lesen, und nach Zeilen aufspalten
@@ -25,8 +26,8 @@ def HAUPTSACHE(ausgewaehlt):
         print("_ ", end="")
     print("") #Naechste print()-Befehle haben Zeilenumbruch danach
 
-    for zuege in range(0,round(len(ausgewaehlt)*1.5)): #Der Spieler hat gerundet auf ganze Zahlen: ( 1.5 * {Länge des ausgewaehlten Worts} ) Zuege
-        print("Du hast noch ", (round(len(ausgewaehlt)*1.5)-zuege), " Zuege frei.")
+    for zuege in range(0,round(len(ausgewaehlt)*difficulty)): #Der Spieler hat gerundet auf ganze Zahlen: ( 1.5 * {Länge des ausgewaehlten Worts} ) Zuege
+        print("Du hast noch ", (round(len(ausgewaehlt)*difficulty)-zuege), " Zuege frei.")
         char = input("Bitte gib einen Buchstaben ein, den du aufdecken möchtest, oder ein Wort, um zu sehen ob es richtig ist: ")
         if len(char) == 1: #Ueberpruefen, ob der eingegebe String nur 1 Buchstabe ist
             for zaehler in range(0,len(ausgewaehlt)):
